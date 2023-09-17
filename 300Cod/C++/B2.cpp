@@ -16,7 +16,8 @@ struct ListNode{
 // Second case: If "val" is given, which is "x", it would take its value, but "*next" still would be "nullptr"
 // Third case: All values are given, our struct "ListNode" will take all this values.
 // <-sub->::
-// Trường hợp đầu tiên: Nếu struct được tạo trống, không có "val" và "*next", nó sẽ là val(0), next(nullptr) (nullptr, vì *next là con trỏ nên chúng ta biết điều đó nhờ dấu *)
+// Trường hợp đầu tiên: Nếu struct được tạo trống, không có "val" và "*next", nó sẽ là val(0), next(nullptr) 
+// (nullptr, vì *next là con trỏ nên chúng ta biết điều đó nhờ dấu *)
 // Trường hợp thứ hai: Nếu cho trước "val", tức là "x", nó sẽ lấy giá trị của nó, nhưng "*next" vẫn sẽ là "nullptr"
 // Trường hợp thứ ba: Tất cả các giá trị đã được đưa ra, struct "ListNode" của chúng ta sẽ lấy tất cả các giá trị này.
 
@@ -87,55 +88,66 @@ struct ListNode{
     }
 // };
 
+void push(ListNode** head, int new_data)
+{
+     ListNode* new_node = new ListNode();
+     new_node->val  = new_data;
+     new_node->next = (*head);
+     (*head) = new_node;
+}
 
-int main(int argc, char const *argv[])
+
+int main()
 {
     ListNode* sum = new ListNode(0);
-
+    
+/*# Add element in main with new listnode*/
 /*List1*/
-    ListNode* n3 = new ListNode(3);
-    ListNode* n2 = new ListNode(4, n3);
-    ListNode* n1 = new ListNode(2, n2);
-
+    // ListNode* n3 = new ListNode(3);
+    // ListNode* n2 = new ListNode(4, n3);
+    // ListNode* n1 = new ListNode(2, n2);
 /*List2*/
-    ListNode* m3 = new ListNode(4);
-    ListNode* m2 = new ListNode(6, m3);
-    ListNode* m1 = new ListNode(7, m2);
+    // ListNode* m3 = new ListNode(4);
+    // ListNode* m2 = new ListNode(6, m3);
+    // ListNode* m1 = new ListNode(7, m2);
     
-/*Array*/    
-    // int tar1,tar2;
-    // int arr1[100];
-    // int arr2[100];
-    // cin >> tar1;
-    // for (int i = 0; i < tar1; i++)
-    // {
-    //     cin >> arr1[i];
-    //     x = new ListNode(arr1[i], x->next);
-    // }
-    // cin >> tar2;
-    // for (int i = 0; i < tar2; i++)
-    // {
-    //     cin >> arr2[i];
-    //     y = new ListNode(arr2[i], y->next);
-    // }
-
-
-/*Vector*/
+/*# Add element in main with push*/  
+/*List2*/
+    //   push(&n1, 6);
+    //   push(&n1, 7);
+    //   push(&n1, 5);
+/*List1*/
+    //   push(&m1, 6);
+    //   push(&m1, 7);
+    //   push(&m1, 5);
+  
+/*# Add element in keyboard with push*/
     // vector<int> nums1, nums2;
-    // int num1,num2;
+    int num1,num2;
+    ListNode* n1 = NULL;
+    ListNode* m1 = NULL;
+    do
+    {
+        cin >> num1;
+        if(num1==-1)
+         break;
+        push(&n1, num1);
+    } while (num1 > -1);    
+    do
+    {
+        cin >> num2;
+        if(num2==-1)
+         break;
+        push(&m1, num2);
+    } while (num2 > -1);
+      
 
-    // do
-    // {
-    //     cin >> num1;
-    //     n1 = new ListNode(num1, n1->next);
-    // } while (num1 > -1);
-    
-    // do
-    // {
-    //     cin >> num2;
-    //     m1 = new ListNode(num2, m1->next);
-    // } while (num2 > -1);
-
+    // test  
+    // while(n1!=NULL){
+    //     cout << n1->val << " ";
+    //     n1 = n1->next;
+    // }
+  
 
 /*Call and Print*/
     sum = addTwoNumbers(n1, m1);
