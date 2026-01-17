@@ -1,0 +1,7 @@
+# Ignore Windows executables
+*.exe
+.cph/
+.vscode/
+../Sorting.cpp
+../Sorting.exe
+
