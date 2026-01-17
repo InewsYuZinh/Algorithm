@@ -1,4 +1,4 @@
-// Library
+// Median of Two Sorted Arrays 
 #include<iostream>
 #include<vector>
 #include <algorithm>
@@ -34,7 +34,6 @@ int main(){
        } while (num2 > -1);
         double average; 
         int n = nums1.size(), m = nums2.size();   
-    
            for (int i = 0; i < n; i++) {
             merged.push_back(nums1[i]);
            }
