@@ -1,0 +1,13 @@
+# Windows executables
+*.exe
+
+# VS Code
+.vscode/
+
+# Ignore root sorting files
+Sorting.cpp
+Sorting.exe
+
+# Ignore cph
+.cph/
+
